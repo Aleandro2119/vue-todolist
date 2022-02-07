@@ -36,5 +36,11 @@ const root = new Vue({
             { text: 'Comprare nuove scarpe modello nike', done: 'false' },
             { text: 'Comprare nuove felpe e t-shirt modello nike', done: 'false' },
         ]
+    },
+
+    methods: {
+        removeTask(index) {
+            this.tasks.splice(index, 1)
+        }
     }
 });
