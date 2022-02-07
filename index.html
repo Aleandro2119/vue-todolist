@@ -24,6 +24,10 @@
             <div class="container">
                 <div class="w-50 mx-auto">
                     <ul class="list-group my-5">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" v-model="newTask">
+                            <button class="btn btn-outline-success" type="button" @click="addTask">Inserisci</button>
+                        </div>
                         <li v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between">
                             {{task.text}}
                             <button type="button" class="btn-close" aria-label="Close"
