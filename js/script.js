@@ -31,12 +31,12 @@ const root = new Vue({
         newTask: '',
 
         tasks: [
-            { text: 'Comprare libri di cucina', done: 'true' },
-            { text: 'Comprare libri di letteratura', done: 'false' },
-            { text: 'Comprare cuffie apple', done: 'false' },
-            { text: 'Comprare caricatore apple', done: 'false' },
-            { text: 'Comprare nuove scarpe modello nike', done: 'false' },
-            { text: 'Comprare nuove felpe e t-shirt modello nike', done: 'false' },
+            { text: 'Comprare libri di cucina', done: false },
+            { text: 'Comprare libri di letteratura', done: false },
+            { text: 'Comprare cuffie apple', done: false },
+            { text: 'Comprare caricatore apple', done: false },
+            { text: 'Comprare nuove scarpe modello nike', done: false },
+            { text: 'Comprare nuove felpe e t-shirt modello nike', done: false },
         ]
     },
 
@@ -52,6 +52,17 @@ const root = new Vue({
             }
 
             this.newTask = '';
+        },
+
+        checkedTask(index) {
+            if (this.tasks[index].done === true) {
+
+                this.tasks[index].done = false;
+
+            } else {
+                this.tasks[index].done = !this.tasks[index].done;
+            }
+
         }
     }
 });
