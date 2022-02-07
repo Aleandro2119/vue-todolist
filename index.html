@@ -29,7 +29,10 @@
                             <button class="btn btn-outline-success" type="button" @click="addTask">Inserisci</button>
                         </div>
                         <li v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between">
-                            {{task.text}}
+                            <div @click="checkedTask(index)">
+                                <i class="far" :class="task.done ? 'fa-check-square' : 'fa-square'" role="buttom"></i>
+                                <span :class="{done: task.done}">{{task.text}}</span>
+                            </div>
                             <button type="button" class="btn-close" aria-label="Close"
                                 @click="removeTask(index)"></button>
                         </li>
