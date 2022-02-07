@@ -28,6 +28,8 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        newTask: '',
+
         tasks: [
             { text: 'Comprare libri di cucina', done: 'true' },
             { text: 'Comprare libri di letteratura', done: 'false' },
@@ -41,6 +43,15 @@ const root = new Vue({
     methods: {
         removeTask(index) {
             this.tasks.splice(index, 1)
+        },
+
+        addTask() {
+            const newTask = this.newTask.trim();
+            if (newTask) {
+                this.tasks.push({ text: newTask, done: false });
+            }
+
+            this.newTask = '';
         }
     }
 });
